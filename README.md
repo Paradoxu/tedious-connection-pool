@@ -106,5 +106,6 @@ The 'error' event is emitted when a connection fails to connect to the SQL Serve
 ## Class: Connection
 The following method is added to the Tedious [Connection](https://tediousjs.github.io/tedious/api-connection.html) object.
 
-### Connection.release()
+### Connection.release(suppressReset)
 Release the connect back to the pool to be used again
+ * `suppressReset` {Boolean} Set to true to prevent the call to connection.reset when returning the connection to the pool. This allows prepared statements to persist across returning the connection to the pool.
